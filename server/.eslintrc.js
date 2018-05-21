@@ -1,7 +1,12 @@
 module.exports = {
   rules: {
     "no-console": "off",
+    "max-len": 0,
+    "require-jsdoc": 0,
+
     quotes: [1, "single"],
+    "object-curly-spacing": 0,
+    "arrow-parens": 0,
     "comma-dangle": [
       "error",
       {
@@ -15,6 +20,6 @@ module.exports = {
   },
   extends: "google",
   parserOptions: {
-    ecmaVersion: 6
+    ecmaVersion: 2017
   }
 };
