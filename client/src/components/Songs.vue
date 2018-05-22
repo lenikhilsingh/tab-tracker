@@ -4,7 +4,7 @@
      <panel title="Songs">
          <div
          v-for="song in songs"
-         :key="song.title">
+         :key="song.id">
             {{song.title}}
             {{song.artist}}
             {{song.album}}
@@ -31,7 +31,8 @@ export default {
   async mounted() {
     // make a request to the backend for all the songs
     // this makes a get request the moment the page is mounted
-    this.songs = await SongsService.index();
+    // always use .data, cz thats how axios returns us our data.
+    this.songs = (await SongsService.index()).data;
   }
 };
 </script>
