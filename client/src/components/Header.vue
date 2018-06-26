@@ -6,7 +6,7 @@
       class="home"
       tag="span"
         :to="{
-          name: 'root'
+          name: 'songs'
         }">
         TabTracker
       </router-link>

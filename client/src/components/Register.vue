@@ -7,7 +7,7 @@
           autocomplete="off">
           <v-text-field
             label="Email"
-            v-model="email"
+            v-model="emailid"
           ></v-text-field>
           <br>
           <v-text-field
@@ -32,7 +32,6 @@
 </template>
 <script>
 import AuthenticationService from "@/services/AuthenticationService";
-import Panel from "@/components/Panel";
 export default {
   // everything inside your script tag is your controller
   // you can kind of bind your html using some keywords
@@ -53,14 +52,14 @@ export default {
         // basically this calls our stores settoken method
         this.$store.dispatch("setToken", response.data.token);
         this.$store.dispatch("setUser", response.data.user);
+        this.$router.push({
+          name: "songs"
+        });
       } catch (error) {
         // this is basically if error is retuned from axios
         this.error = error.response.data.error;
       }
     }
-  },
-  components: {
-    Panel
   }
 };
 </script>
